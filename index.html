@@ -46,8 +46,19 @@
             margin: 0 auto;
         }
 
+        /* Estilo especial para o logo PNG transparente se destacar no fundo preto */
+        .logo {
+            background-color: white; /* Moldura branca para destacar o logo sem fundo */
+            padding: 6px 14px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
         .logo img {
-            height: 55px;
+            height: 45px; /* Ajuste leve de altura por causa do fundo */
             display: block;
         }
 
@@ -223,8 +234,8 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <!-- Alterado logotipo para .jpeg -->
-                <img src="input_file_4.jpeg" alt="Logo Coberka">
+                <!-- Usando a logo .png com a nova moldura branca do CSS -->
+                <img src="input_file_4.png" alt="Logo Coberka">
             </div>
             <a href="https://wa.me/5511999999999" class="contact-btn" target="_blank">Fale Conosco</a>
         </div>
@@ -241,7 +252,6 @@
     <section class="gallery">
         <h2 class="section-title">Nossos Projetos</h2>
         <div class="grid">
-            <!-- Alterados todos os caminhos de imagem para .jpeg -->
             <div class="grid-item">
                 <img src="input_file_0.jpeg" alt="Cobertura Retrátil Coberka">
                 <div class="grid-item-info">
