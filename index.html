@@ -1,401 +1,218 @@
-[17:50, 13/07/2026] Kayro Nascimento: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coberka | Coberturas Retráteis de Vidro e Alumínio</title>
-    <!-- Importando fonte elegante e ícones modernos -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <title>Coberka | Coberturas Retráteis e Vidros</title>
     <style>
-        /* Reset de Estilos */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        body {
-            background-color: #f8f9fa;
-       …
-[18:12, 13/07/2026] Kayro Nascimento: <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coberka | Estruturas e Vidros</title>
-    <!-- Fontes elegantes e ícones de alta qualidade -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        /* Variáveis de Cores Baseadas no seu Logo */
         :root {
-            --primary-dark: #002d72;   /* Azul escuro profundo do logo */
-            --primary-blue: #0056b3;   /* Azul royal do logo */
-            --accent-cyan: #0099ff;    /* Azul ciano brilhante */
-            --bg-light: #f4f8fc;       /* Fundo claro azulado suave */
-            --text-dark: #1e2d42;      /* Texto escuro legível */
-            --whatsapp-green: #25d366;
+            --primary: #111111;
+            --accent: #d4af37;
+            --light: #f9f9f9;
+            --dark: #1a1a1a;
+            --gray: #666666;
         }
-
-        /* Reset e Estilos Globais */
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            background-color: var(--light);
+            color: var(--primary);
             line-height: 1.6;
         }
 
-        /* Cabeçalho */
         header {
-            background-color: #ffffff;
-            position: sticky;
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 5%;
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 45, 114, 0.08);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border-bottom: 2px solid var(--accent);
         }
 
         .header-container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        /* Logo do Cabeçalho */
-        .header-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .logo img {
+            height: 55px;
+            display: block;
         }
 
-        .header-logo img {
-            height: 60px;
-            width: auto;
-        }
-
-        .header-logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .header-logo-text .brand-name {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--primary-dark);
-            letter-spacing: 1px;
-            line-height: 1.1;
-        }
-
-        .header-logo-text .brand-subtitle {
-            font-size: 10px;
-            font-weight: 600;
-            color: var(--accent-cyan);
-            letter-spacing: 1px;
+        .contact-btn {
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: 0.3s;
             text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
-        nav a {
-            color: var(--primary-dark);
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: color 0.3s ease;
+        .contact-btn:hover {
+            background-color: white;
+            color: var(--primary);
         }
 
-        nav a:hover {
-            color: var(--accent-cyan);
-        }
-
-        /* Seção Hero / Principal */
         .hero {
-            background: linear-gradient(135deg, rgba(0, 45, 114, 0.9), rgba(0, 86, 179, 0.8)), url('input_file_2.png') no-repeat center center/cover;
-            padding: 100px 20px;
-            text-align: center;
-            color: #ffffff;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('input_file_0.jpeg') no-repeat center center/cover;
+            height: 80vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            min-height: 65vh;
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero-logo-img {
-            max-width: 180px;
-            margin-bottom: 25px;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
-        }
-
-        .hero h2 {
-            font-size: 38px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            font-weight: 300;
-            margin-bottom: 35px;
-            opacity: 0.95;
-        }
-
-        /* Botões */
-        .btn {
-            display: inline-block;
-            background-color: #ffffff;
-            color: var(--primary-dark);
-            padding: 14px 35px;
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-cyan);
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 153, 255, 0.4);
-        }
-
-        /* Slogan de Destaque */
-        .slogan-bar {
-            background-color: var(--primary-dark);
-            color: #ffffff;
+            justify-content: center;
             text-align: center;
-            padding: 15px;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            border-bottom: 4px solid var(--accent-cyan);
+            color: white;
+            padding: 0 20px;
+            margin-top: 85px;
         }
 
-        /* Seção Portfólio de Trabalhos */
-        .portfolio {
-            padding: 80px 0;
-            background-color: #ffffff;
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 15px 35px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(212,175,55,0.3);
+        }
+
+        .cta-btn:hover {
+            background-color: white;
+            transform: translateY(-3px);
+        }
+
+        .gallery {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
             margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 32px;
-            color: var(--primary-dark);
+            font-size: 2.2rem;
             position: relative;
-            display: inline-block;
-            padding-bottom: 12px;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .section-title h2::after {
+        .section-title::after {
             content: '';
-            width: 60px;
-            height: 4px;
-            background-color: var(--accent-cyan);
             position: absolute;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            border-radius: 2px;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
         }
 
-        .grid-portfolio {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
         }
 
-        .portfolio-item {
-            position: relative;
-            border-radius: 12px;
+        .grid-item {
+            background: white;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 45, 114, 0.08);
-            height: 320px;
-            background-color: var(--bg-light);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            border: 1px solid #eee;
         }
 
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.08);
-        }
-
-        .portfolio-tag {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            background-color: rgba(0, 45, 114, 0.9);
-            color: #ffffff;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            border-left: 3px solid var(--accent-cyan);
-        }
-
-        /* Seção Informações de Contato */
-        .contato {
-            padding: 80px 0;
-            background-color: var(--bg-light);
-        }
-
-        .grid-contato {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card-contato {
-            background-color: #ffffff;
-            padding: 40px 30px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 45, 114, 0.05);
-            border-top: 5px solid var(--primary-blue);
-            transition: transform 0.3s ease;
-        }
-
-        .card-contato:hover {
+        .grid-item:hover {
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-        .card-contato i {
-            font-size: 40px;
-            color: var(--accent-cyan);
-            margin-bottom: 20px;
+        .grid-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
         }
 
-        .card-contato h3 {
-            font-size: 20px;
-            color: var(--primary-dark);
-            margin-bottom: 15px;
+        .grid-item-info {
+            padding: 20px;
         }
 
-        .card-contato p, .card-contato a {
-            color: #556375;
-            font-size: 15px;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .card-contato a {
-            color: var(--primary-blue);
-            font-weight: 700;
-            transition: color 0.3s;
-        }
-
-        .card-contato a:hover {
-            color: var(--accent-cyan);
-        }
-
-        /* Rodapé */
-        footer {
-            background-color: var(--primary-dark);
-            color: #ffffff;
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 5px solid var(--accent-cyan);
-        }
-
-        footer p {
-            font-size: 14px;
-            opacity: 0.8;
+        .grid-item-info h3 {
+            font-size: 1.2rem;
             margin-bottom: 8px;
+            color: var(--primary);
         }
 
-        footer .logo-footer {
-            max-width: 120px;
-            margin-bottom: 15px;
+        .grid-item-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
         }
 
-        /* Botão Flutuante de WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            width: 65px;
-            height: 65px;
-            bottom: 30px;
-            right: 30px;
-            background-color: var(--whatsapp-green);
-            color: #ffffff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            z-index: 1000;
-            text-decoration: none;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+        .footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 3px solid var(--accent);
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #20ba5a;
+        .footer p {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: #ccc;
         }
 
-        /* Responsividade para Telas Menores (Celulares e Tablets) */
-        @media (max-width: 992px) {
-            .grid-portfolio {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .grid-contato {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
+        .footer .highlight {
+            color: var(--accent);
+            font-weight: bold;
         }
 
         @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
+            .hero-content h1 {
+                font-size: 2rem;
             }
-            nav {
-                display: flex;
-                gap: 10px;
+            .hero-content p {
+                font-size: 1rem;
             }
-            nav a {
-                margin: 0;
-            }
-            .hero h2 {
-                font-size: 28px;
-            }
-            .grid-portfolio {
+            .grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -403,154 +220,98 @@
 </head>
 <body>
 
-    <!-- CABEÇALHO COMPLETO -->
     <header>
         <div class="header-container">
-            <div class="header-logo">
-                <!-- Usando o seu logotipo original enviado -->
-                <img src="input_file_4.png" alt="Coberka Logo">
-                <div class="header-logo-text">
-                    <span class="brand-name">COBERKA</span>
-                    <span class="brand-subtitle">Estruturas e Vidros</span>
-                </div>
+            <div class="logo">
+                <!-- Alterado logotipo para .jpeg -->
+                <img src="input_file_4.jpeg" alt="Logo Coberka">
             </div>
-            <nav>
-                <a href="#inicio">Início</a>
-                <a href="#trabalhos">Nossos Projetos</a>
-                <a href="#contato">Fale Conosco</a>
-            </nav>
+            <a href="https://wa.me/5511999999999" class="contact-btn" target="_blank">Fale Conosco</a>
         </div>
     </header>
 
-    <!-- SLOGAN OFICIAL EXTRAÍDO DO LOGO -->
-    <div class="slogan-bar">
-        "A BELEZA QUE VOCÊ VÊ E A QUALIDADE QUE VOCÊ SENTE"
-    </div>
-
-    <!-- SEÇÃO DE APRESENTAÇÃO (HERO BANNER) -->
-    <section class="hero" id="inicio">
+    <section class="hero">
         <div class="hero-content">
-            <img src="input_file_4.png" alt="Coberka Logo" class="hero-logo-img">
-            <h2>Especialistas em Coberturas de Vidro e Alumínio</h2>
-            <p>Fabricação própria, projetos sob medida e acabamento refinado de alto padrão para sua casa ou empresa.</p>
-            <a href="https://wa.me/5511958687459?text=Olá! Gostaria de fazer um orçamento de cobertura com a Coberka." target="_blank" class="btn">
-                <i class="fab fa-whatsapp"></i> Solicite um Orçamento Grátis
-            </a>
+            <h1>Coberturas de Vidro & <span>Estruturas Retráteis</span></h1>
+            <p>Design moderno, durabilidade extrema e proteção sofisticada para o seu ambiente residencial ou comercial.</p>
+            <a href="https://wa.me/5511999999999" class="cta-btn" target="_blank">Orçamento pelo WhatsApp</a>
         </div>
     </section>
 
-    <!-- GALERIA DE PROJETOS REAIS (FOTOS ENVIADAS) -->
-    <section class="portfolio" id="trabalhos">
-        <div class="container">
-            <div class="section-title">
-                <h2>Projetos Executados</h2>
+    <section class="gallery">
+        <h2 class="section-title">Nossos Projetos</h2>
+        <div class="grid">
+            <!-- Alterados todos os caminhos de imagem para .jpeg -->
+            <div class="grid-item">
+                <img src="input_file_0.jpeg" alt="Cobertura Retrátil Coberka">
+                <div class="grid-item-info">
+                    <h3>Cobertura Retrátil Automatizada</h3>
+                    <p>Controle de luz e ventilação ao toque de um botão.</p>
+                </div>
             </div>
-            <div class="grid-portfolio">
-                
-                <!-- Foto 1 -->
-                <div class="portfolio-item">
-                    <img src="input_file_0.png" alt="Cobertura de Vidro Coberka">
-                    <div class="portfolio-tag">Sistema Retrátil de Vidro</div>
+            <div class="grid-item">
+                <img src="input_file_1.jpeg" alt="Cobertura de Vidro Coberka">
+                <div class="grid-item-info">
+                    <h3>Cobertura Fixa de Vidro</h3>
+                    <p>Iluminação natural com total proteção contra chuvas.</p>
                 </div>
-
-                <!-- Foto 2 -->
-                <div class="portfolio-item">
-                    <img src="input_file_1.png" alt="Teto Retrátil em Alumínio">
-                    <div class="portfolio-tag">Cobertura Residencial</div>
-                </div>
-
-                <!-- Foto 3 -->
-                <div class="portfolio-item">
-                    <img src="input_file_2.png" alt="Cobertura Fixa de Vidro Premium">
-                    <div class="portfolio-tag">Área de Lazer Integrada</div>
-                </div>
-
-                <!-- Foto 4 -->
-                <div class="portfolio-item">
-                    <img src="input_file_3.png" alt="Projeto Coberka Vidros">
-                    <div class="portfolio-tag">Perfis de Alumínio Sob Medida</div>
-                </div>
-
-                <!-- Foto 5 -->
-                <div class="portfolio-item">
-                    <img src="input_file_5.png" alt="Instalação Premium Coberka">
-                    <div class="portfolio-tag">Acabamento Impecável</div>
-                </div>
-
-                <!-- Foto 6 -->
-                <div class="portfolio-item">
-                    <img src="input_file_6.png" alt="Cobertura de Correr Manual">
-                    <div class="portfolio-tag">Coberturas de Alta Resistência</div>
-                </div>
-
-                <!-- Foto 7 -->
-                <div class="portfolio-item">
-                    <img src="input_file_7.png" alt="Design Moderno em Vidro">
-                    <div class="portfolio-tag">Área Gourmet Elegante</div>
-                </div>
-
-                <!-- Foto 8 -->
-                <div class="portfolio-item">
-                    <img src="input_file_8.png" alt="Sistemas de Segurança em Vidro">
-                    <div class="portfolio-tag">Vidro de Alta Durabilidade</div>
-                </div>
-
-                <!-- Foto 9 -->
-                <div class="portfolio-item">
-                    <img src="input_file_9.png" alt="Estruturas Coberka">
-                    <div class="portfolio-tag">Projetos Customizados</div>
-                </div>
-
             </div>
-        </div>
-    </section>
-
-    <!-- SEÇÃO DE CONTATOS E LOCALIZAÇÃO -->
-    <section class="contato" id="contato">
-        <div class="container">
-            <div class="section-title">
-                <h2>Fale com a Coberka</h2>
+            <div class="grid-item">
+                <img src="input_file_2.jpeg" alt="Área Gourmet Coberka">
+                <div class="grid-item-info">
+                    <h3>Fechamento de Área Gourmet</h3>
+                    <p>Perfeito para otimizar e valorizar o espaço de lazer.</p>
+                </div>
             </div>
-            <div class="grid-contato">
-
-                <!-- Endereço -->
-                <div class="card-contato">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Onde Estamos</h3>
-                    <p>Rua Antonina do Norte, 104<br>Bairro Jardim Ferão<br>Guarulhos - SP</p>
+            <div class="grid-item">
+                <img src="input_file_3.jpeg" alt="Estrutura de Alumínio Coberka">
+                <div class="grid-item-info">
+                    <h3>Estrutura em Alumínio Preto</h3>
+                    <p>Alta resistência mecânica e design moderno livre de corrosão.</p>
                 </div>
-
-                <!-- WhatsApp Integrado -->
-                <div class="card-contato">
-                    <i class="fab fa-whatsapp"></i>
-                    <h3>WhatsApp</h3>
-                    <p style="margin-bottom: 10px;">Solicite fotos e orçamentos direto no celular:</p>
-                    <p><a href="https://wa.me/5511958687459?text=Olá! Gostaria de um orçamento." target="_blank">(11) 95868-7459</a></p>
+            </div>
+            <div class="grid-item">
+                <img src="input_file_5.jpeg" alt="Projeto Sob Medida Coberka">
+                <div class="grid-item-info">
+                    <h3>Soluções Personalizadas</h3>
+                    <p>Planejamento sob medida para a arquitetura do seu imóvel.</p>
                 </div>
-
-                <!-- Canal Facebook -->
-                <div class="card-contato">
-                    <i class="fab fa-facebook-f"></i>
-                    <h3>Facebook</h3>
-                    <p style="margin-bottom: 10px;">Siga nossa página e acompanhe as novidades:</p>
-                    <p><a href="https://facebook.com/coberka" target="_blank">facebook.com/coberka</a></p>
+            </div>
+            <div class="grid-item">
+                <img src="input_file_6.jpeg" alt="Cobertura Comercial Coberka">
+                <div class="grid-item-info">
+                    <h3>Projetos Comerciais</h3>
+                    <p>Conforto térmico e sofisticação para comércios e restaurantes.</p>
                 </div>
-
+            </div>
+            <div class="grid-item">
+                <img src="input_file_7.jpeg" alt="Vidro Laminado Coberka">
+                <div class="grid-item-info">
+                    <h3>Vidros de Segurança</h3>
+                    <p>Utilização de vidros laminados e temperados com película de proteção.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="input_file_8.jpeg" alt="Garantia Coberka">
+                <div class="grid-item-info">
+                    <h3>Acabamento Premium</h3>
+                    <p>Vedação profissional e escoamento planejado de águas pluviais.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="input_file_9.jpeg" alt="Serralheria Fina Coberka">
+                <div class="grid-item-info">
+                    <h3>Serralheria Fina</h3>
+                    <p>Estruturas metálicas de alta costura com acabamento impecável.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- RODAPÉ -->
-    <footer>
-        <img src="input_file_4.png" alt="Coberka Logo" class="logo-footer">
-        <p>&copy; 2026 Coberka - Estruturas e Vidros. Todos os direitos reservados.</p>
-        <p>A beleza que você vê e a qualidade que você sente.</p>
+    <footer class="footer">
+        <p>&copy; 2026 <span class="highlight">Coberka</span>. Todos os direitos reservados.</p>
+        <p>Guarulhos - SP | Atendimento em toda a Grande São Paulo</p>
     </footer>
-
-    <!-- BOTÃO FLUTUANTE EXCLUSIVO DO WHATSAPP -->
-    <a href="https://wa.me/5511958687459?text=Olá! Vim pelo site e gostaria de um orçamento de cobertura." class="whatsapp-float" target="_blank" title="Fale pelo WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
 </body>
 </html>
