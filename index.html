@@ -45,7 +45,18 @@
             max-width: 1200px;
             margin: 0 auto;
         }
+/* Estilo para o novo logo retangular */
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
+        .logo img {
+            height: 55px; /* Altura ideal para o novo formato */
+            border-radius: 4px; /* Cantos levemente arredondados no fundo cinza */
+            display: block;
+        }
         /* Estilo especial para o logo PNG transparente se destacar no fundo preto */
         .logo {
             background-color: white; /* Moldura branca para destacar o logo sem fundo */
@@ -245,7 +256,10 @@
         <div class="hero-content">
             <h1>Coberturas de Vidro & <span>Estruturas Retráteis</span></h1>
             <p>Design moderno, durabilidade extrema e proteção sofisticada para o seu ambiente residencial ou comercial.</p>
-            <a href="https://wa.me/5511999999999" class="cta-btn" target="_blank">Orçamento pelo WhatsApp</a>
+           <div class="logo">
+                <!-- Novo logotipo da Coberka -->
+                <img src="logo_novo.png" alt="Logo Coberka">
+            </div>
         </div>
     </section>
 
