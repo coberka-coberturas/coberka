@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coberka | Coberturas Retráteis e Vidros</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #111111;
@@ -46,7 +47,6 @@
             margin: 0 auto;
         }
 
-        /* Estilo para o novo logo retangular */
         .logo {
             display: flex;
             align-items: center;
@@ -54,8 +54,8 @@
         }
 
         .logo img {
-            height: 55px; /* Altura ideal para o novo formato */
-            border-radius: 4px; /* Cantos levemente arredondados no fundo cinza */
+            height: 55px;
+            border-radius: 4px;
             display: block;
         }
 
@@ -69,6 +69,9 @@
             transition: 0.3s;
             text-transform: uppercase;
             font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .contact-btn:hover {
@@ -116,7 +119,9 @@
             font-weight: bold;
             border-radius: 4px;
             transition: 0.3s;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
             box-shadow: 0 4px 15px rgba(212,175,55,0.3);
         }
 
@@ -158,6 +163,7 @@
             gap: 25px;
         }
 
+        /* Estilo dos itens da galeria agora como links clicáveis */
         .grid-item {
             background: white;
             border-radius: 8px;
@@ -165,6 +171,8 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             transition: 0.3s;
             border: 1px solid #eee;
+            text-decoration: none; /* Remove sublinhado de link */
+            display: block;
         }
 
         .grid-item:hover {
@@ -203,7 +211,7 @@
         }
 
         .footer p {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-size: 0.95rem;
             color: #ccc;
         }
@@ -211,6 +219,33 @@
         .footer .highlight {
             color: var(--accent);
             font-weight: bold;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-btn {
+            color: white;
+            font-size: 1.5rem;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .social-btn:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-3px);
         }
 
         @media (max-width: 768px) {
@@ -231,10 +266,11 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <!-- Novo logotipo retangular da Coberka -->
                 <img src="logo_novo.png" alt="Logo Coberka">
             </div>
-            <a href="https://wa.me/5511999999999" class="contact-btn" target="_blank">Fale Conosco</a>
+            <a href="https://wa.me/5511958687459?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+cobertura." class="contact-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Fale Conosco
+            </a>
         </div>
     </header>
 
@@ -242,80 +278,58 @@
         <div class="hero-content">
             <h1>Coberturas de Vidro & <span>Estruturas Retráteis</span></h1>
             <p>Design moderno, durabilidade extrema e proteção sofisticada para o seu ambiente residencial ou comercial.</p>
-            <a href="https://wa.me/5511999999999" class="cta-btn" target="_blank">Orçamento pelo WhatsApp</a>
+            <a href="https://wa.me/5511958687459?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+cobertura." class="cta-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Orçamento pelo WhatsApp
+            </a>
         </div>
     </section>
 
     <section class="gallery">
         <h2 class="section-title">Nossos Projetos</h2>
         <div class="grid">
-            <div class="grid-item">
-                <img src="input_file_0.jpeg" alt="Cobertura Retrátil Coberka">
-                <div class="grid-item-info">
-                    <h3>Cobertura Retrátil Automatizada</h3>
-                    <p>Controle de luz e ventilação ao toque de um botão.</p>
-                </div>
-            </div>
-            <div class="grid-item">
+            
+            <!-- Categoria: Cobertura de Vidro -->
+            <a href="vidro.html" class="grid-item">
                 <img src="input_file_1.jpeg" alt="Cobertura de Vidro Coberka">
                 <div class="grid-item-info">
-                    <h3>Cobertura Fixa de Vidro</h3>
-                    <p>Iluminação natural com total proteção contra chuvas.</p>
+                    <h3>Coberturas de Vidro</h3>
+                    <p>Clique para ver mais fotos de projetos elegantes em vidro de segurança.</p>
                 </div>
-            </div>
-            <div class="grid-item">
-                <img src="input_file_2.jpeg" alt="Área Gourmet Coberka">
+            </a>
+
+            <!-- Categoria: Policarbonato Compacto -->
+            <a href="policarbonato.html" class="grid-item">
+                <img src="input_file_5.jpeg" alt="Cobertura de Policarbonato Coberka">
                 <div class="grid-item-info">
-                    <h3>Fechamento de Área Gourmet</h3>
-                    <p>Perfeito para otimizar e valorizar o espaço de lazer.</p>
+                    <h3>Policarbonato Compacto</h3>
+                    <p>Clique para ver fotos de coberturas leves e altamente resistentes.</p>
                 </div>
-            </div>
-            <div class="grid-item">
-                <img src="input_file_3.jpeg" alt="Estrutura de Alumínio Coberka">
+            </a>
+
+            <!-- Categoria: Coberturas Retráteis -->
+            <a href="retratil.html" class="grid-item">
+                <img src="input_file_0.jpeg" alt="Cobertura Retrátil Coberka">
                 <div class="grid-item-info">
-                    <h3>Estrutura em Alumínio Preto</h3>
-                    <p>Alta resistência mecânica e design moderno livre de corrosão.</p>
+                    <h3>Sistemas Retráteis</h3>
+                    <p>Clique para ver fotos e detalhes de nossas estruturas móveis.</p>
                 </div>
-            </div>
-            <div class="grid-item">
-                <img src="input_file_5.jpeg" alt="Projeto Sob Medida Coberka">
-                <div class="grid-item-info">
-                    <h3>Soluções Personalizadas</h3>
-                    <p>Planejamento sob medida para a arquitetura do seu imóvel.</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <img src="input_file_6.jpeg" alt="Cobertura Comercial Coberka">
-                <div class="grid-item-info">
-                    <h3>Projetos Comerciais</h3>
-                    <p>Conforto térmico e sofisticação para comércios e restaurantes.</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <img src="input_file_7.jpeg" alt="Vidro Laminado Coberka">
-                <div class="grid-item-info">
-                    <h3>Vidros de Segurança</h3>
-                    <p>Utilização de vidros laminados e temperados com película de proteção.</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <img src="input_file_8.jpeg" alt="Garantia Coberka">
-                <div class="grid-item-info">
-                    <h3>Acabamento Premium</h3>
-                    <p>Vedação profissional e escoamento planejado de águas pluviais.</p>
-                </div>
-            </div>
-            <div class="grid-item">
-                <img src="input_file_9.jpeg" alt="Serralheria Fina Coberka">
-                <div class="grid-item-info">
-                    <h3>Serralheria Fina</h3>
-                    <p>Estruturas metálicas de alta costura com acabamento impecável.</p>
-                </div>
-            </div>
+            </a>
+
         </div>
     </section>
 
     <footer class="footer">
+        <div class="social-links">
+            <a href="https://wa.me/5511958687459?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+cobertura." class="social-btn" target="_blank" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/coberka.coberturas?igsh=dXl5enUza3gxZXg0" class="social-btn" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/coberka_coberturas" class="social-btn" target="_blank" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
         <p>&copy; 2026 <span class="highlight">Coberka</span>. Todos os direitos reservados.</p>
         <p>Guarulhos - SP | Atendimento em toda a Grande São Paulo</p>
     </footer>
