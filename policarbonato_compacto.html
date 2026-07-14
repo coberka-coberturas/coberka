@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policarbonato Compacto | Coberka</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* [Mesmo estilo CSS padronizado] */
+        :root { --primary: #111111; --accent: #d4af37; --light: #f9f9f9; --dark: #1a1a1a; --gray: #666666; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--light); color: var(--primary); line-height: 1.6; }
+        header { background-color: var(--primary); color: white; padding: 15px 5%; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); border-bottom: 2px solid var(--accent); }
+        .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .logo img { height: 55px; border-radius: 4px; }
+        .back-btn { background-color: transparent; color: white; padding: 10px 20px; text-decoration: none; font-weight: bold; border: 1px solid var(--accent); border-radius: 4px; transition: 0.3s; margin-right: 15px; }
+        .back-btn:hover { background-color: var(--accent); color: var(--primary); }
+        .contact-btn { background-color: var(--accent); color: var(--primary); padding: 10px 20px; text-decoration: none; font-weight: bold; border-radius: 4px; transition: 0.3s; text-transform: uppercase; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
+        .contact-btn:hover { background-color: white; color: var(--primary); }
+        .content-area { padding: 140px 5% 80px; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.2rem; position: relative; padding-bottom: 15px; text-transform: uppercase; }
+        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 3px; background-color: var(--accent); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+        .grid-item { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border: 1px solid #eee; }
+        .grid-item img { width: 100%; height: 250px; object-fit: cover; display: block; }
+        .grid-item-info { padding: 20px; }
+        .grid-item-info h3 { font-size: 1.2rem; margin-bottom: 8px; color: var(--primary); }
+        .grid-item-info p { color: var(--gray); font-size: 0.95rem; }
+        .footer { background-color: var(--primary); color: white; text-align: center; padding: 40px 20px; border-top: 3px solid var(--accent); }
+        .footer p { margin-bottom: 15px; font-size: 0.95rem; color: #ccc; }
+        .footer .highlight { color: var(--accent); font-weight: bold; }
+        .social-links { margin-bottom: 20px; display: flex; justify-content: center; gap: 20px; }
+        .social-btn { color: white; font-size: 1.5rem; transition: 0.3s; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; border: 2px solid rgba(255,255,255,0.1); border-radius: 50%; }
+        .social-btn:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-3px); }
+        .header-nav { display: flex; align-items: center; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo"><img src="logo_novo.png" alt="Logo Coberka"></div>
+            <div class="header-nav">
+                <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar</a>
+                <a href="https://wa.me/5511958687459?text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+para+Cobertura+de+Policarbonato+Compacto." class="contact-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Orçamento
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="content-area">
+        <h2 class="section-title">Policarbonato Compacto</h2>
+        <div class="grid">
+            <div class="grid-item">
+                <img src="input_file_5.jpeg" alt="Policarbonato Compacto">
+                <div class="grid-item-info">
+                    <h3>Policarbonato Compacto Premium</h3>
+                    <p>Visual limpo e brilhante idêntico ao vidro, porém incrivelmente resistente contra impactos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://wa.me/5511958687459?text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+para+Cobertura+de+Policarbonato+Compacto." class="social-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/coberka.coberturas?igsh=dXl5enUza3gxZXg0" class="social-btn" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/coberka_coberturas" class="social-btn" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </div>
+        <p>&copy; 2026 <span class="highlight">Coberka</span>. Todos os direitos reservados.</p>
+        <p>Guarulhos - SP | Atendimento em toda a Grande São Paulo</p>
+    </footer>
+
+</body>
+</html>
