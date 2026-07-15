@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serviços de Vidraçaria | Coberka</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 1. O visualizador do efeito de movimento (CSS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root { --primary: #111111; --accent: #d4af37; --light: #f9f9f9; --dark: #1a1a1a; --gray: #666666; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: var(--light); color: var(--primary); line-height: 1.6; }
+        body { background-color: var(--light); color: var(--primary); line-height: 1.6; overflow-x: hidden; }
         header { background-color: var(--primary); color: white; padding: 15px 5%; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); border-bottom: 2px solid var(--accent); }
         .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
         .logo img { height: 55px; border-radius: 4px; }
@@ -19,7 +21,6 @@
         .section-title { text-align: center; margin-bottom: 20px; font-size: 2.2rem; text-transform: uppercase; }
         .section-subtitle { text-align: center; color: var(--gray); margin-bottom: 50px; font-size: 1.1rem; }
         
-        /* Grid do Menu */
         .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
         .menu-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border: 1px solid #eee; text-decoration: none; color: var(--primary); transition: 0.3s; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 40px 20px; }
         .menu-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15); }
@@ -37,20 +38,20 @@
 <body>
 
     <header>
-        <div class="header-container">
+        <div class="header-container" data-aos="fade-down">
             <div class="logo"><img src="logo_novo.png" alt="Logo Coberka"></div>
             <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar ao Início</a>
         </div>
     </header>
 
     <div class="content-area">
-        <h2 class="section-title">Nossos Serviços de Vidraçaria</h2>
-        <p class="section-subtitle">Selecione uma categoria abaixo para visualizar nossa galeria de projetos realizados.</p>
+        <h2 class="section-title" data-aos="fade-up">Nossos Serviços de Vidraçaria</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Selecione uma categoria abaixo para visualizar nossa galeria de projetos realizados.</p>
         
         <div class="menu-grid">
             
             <!-- Card 1: Envidraçamento -->
-            <a href="envidracamento.html" class="menu-card">
+            <a href="envidracamento.html" class="menu-card" data-aos="fade-up" data-aos-delay="200">
                 <i class="fas fa-window-maximize"></i>
                 <h3>Envidraçamento</h3>
                 <p>Sacadas, varandas e fechamentos de área com abertura total.</p>
@@ -58,7 +59,7 @@
             </a>
 
             <!-- Card 2: Janelas -->
-            <a href="janelas.html" class="menu-card">
+            <a href="janelas.html" class="menu-card" data-aos="fade-up" data-aos-delay="300">
                 <i class="fas fa-door-open"></i>
                 <h3>Janelas e Portas</h3>
                 <p>Esquadrias de alumínio sob medida e fechamentos residenciais.</p>
@@ -66,7 +67,7 @@
             </a>
 
             <!-- Card 3: Guarda-corpo -->
-            <a href="guardacorpo.html" class="menu-card">
+            <a href="guardacorpo.html" class="menu-card" data-aos="fade-up" data-aos-delay="400">
                 <i class="fas fa-shield-halved"></i>
                 <h3>Guarda-corpo</h3>
                 <p>Segurança e sofisticação para escadas, mezaninos e sacadas.</p>
@@ -74,7 +75,7 @@
             </a>
 
             <!-- Card 4: Box de Banheiro -->
-            <a href="box.html" class="menu-card">
+            <a href="box.html" class="menu-card" data-aos="fade-up" data-aos-delay="500">
                 <i class="fas fa-shower"></i>
                 <h3>Box de Banheiro</h3>
                 <p>Modelos padrão e engenharia com roldanas aparentes e inox.</p>
@@ -89,5 +90,13 @@
         <p>Guarulhos - SP | Atendimento em toda a Grande São Paulo</p>
     </footer>
 
+    <!-- 2. O motor do movimento (Scripts) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
 </html>
