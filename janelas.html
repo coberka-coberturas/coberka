@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Janelas e Portas | Coberka</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS de Animação -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root { --primary: #111111; --accent: #d4af37; --light: #f9f9f9; --dark: #1a1a1a; --gray: #666666; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: var(--light); color: var(--primary); line-height: 1.6; }
+        body { background-color: var(--light); color: var(--primary); line-height: 1.6; overflow-x: hidden; }
         header { background-color: var(--primary); color: white; padding: 15px 5%; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); border-bottom: 2px solid var(--accent); }
         .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
         .logo img { height: 55px; border-radius: 4px; }
@@ -37,7 +39,7 @@
 <body>
 
     <header>
-        <div class="header-container">
+        <div class="header-container" data-aos="fade-down">
             <div class="logo"><img src="logo_novo.png" alt="Logo Coberka"></div>
             <div class="header-nav">
                 <a href="vidracaria.html" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar</a>
@@ -49,11 +51,11 @@
     </header>
 
     <div class="content-area">
-        <h2 class="section-title">Janelas e Portas de Alumínio</h2>
+        <h2 class="section-title" data-aos="zoom-in">Janelas e Portas de Alumínio</h2>
         <div class="grid">
             
             <!-- Foto 1 -->
-            <div class="grid-item">
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="100">
                 <img src="janela1.jpg" alt="Portas e Janelas">
                 <div class="grid-item-info">
                     <h3>Projeto Esquadria 1</h3>
@@ -61,16 +63,86 @@
                 </div>
             </div>
 
-            <!-- Repetição de fotos até completar 10 -->
-            <div class="grid-item"><img src="janela2.jpg" alt="Janela"><div class="grid-item-info"><h3>Projeto Esquadria 2</h3><p>Janelas de correr modernas em alumínio preto.</p></div></div>
-            <div class="grid-item"><img src="janela3.jpg" alt="Janela"><div class="grid-item-info"><h3>Projeto Esquadria 3</h3><p>Porta balcão integrada para saída de varandas.</p></div></div>
-            <div class="grid-item"><img src="janela4.jpg" alt="Janela"><div class="grid-item-info"><h3>Projeto Esquadria 4</h3><p>Esquadrias residenciais robustas com isolamento acústico.</p></div></div>
-            <div class="grid-item"><img src="janela5.jpg" alt="Janela"><div class="grid-item-info"><h3>Projeto Esquadria 5</h3><p>Soluções sob medida para cozinhas e lavanderias.</p></div></div>
-            <div class="grid-item"><img src="janela6.jpg" alt="Janela"><div class="grid-item-info"><h3>Projeto Esquadria 6</h3><p>Portas pivotantes de vidro temperado de alta segurança.</p></div></div>
-            <div class="grid-item"><img src="janela7.jpg" alt="Janela"><div class="grid-item-info"><h3>Projeto Esquadria 7</h3><p>Visual clean integrado com perfis discretos.</p></div></div>
-            <div class="grid-item"><img src="janela8.jpg" alt="Janela"><div class="grid-item-info"><h3>Projeto Esquadria 8</h3><p>Janelas maxim-ar perfeitas para banheiros e lavabos.</p></div></div>
-            <div class="grid-item"><img src="janela9.jpg" alt="Janela"><div class="grid-item-info"><h3>Projeto Esquadria 9</h3><p>Portas integradas com persiana automatizada.</p></div></div>
-            <div class="grid-item"><img src="janela10.jpg" alt="Janela"><div class="grid-item-info"><h3>Projeto Esquadria 10</h3><p>Trabalho estrutural robusto garantindo durabilidade.</p></div></div>
+            <!-- Foto 2 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="janela2.jpg" alt="Janela">
+                <div class="grid-item-info">
+                    <h3>Projeto Esquadria 2</h3>
+                    <p>Janelas de correr modernas em alumínio preto.</p>
+                </div>
+            </div>
+
+            <!-- Foto 3 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="300">
+                <img src="janela3.jpg" alt="Janela">
+                <div class="grid-item-info">
+                    <h3>Projeto Esquadria 3</h3>
+                    <p>Porta balcão integrada para saída de varandas.</p>
+                </div>
+            </div>
+
+            <!-- Foto 4 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="janela4.jpg" alt="Janela">
+                <div class="grid-item-info">
+                    <h3>Projeto Esquadria 4</h3>
+                    <p>Esquadrias residenciais robustas com isolamento acústico.</p>
+                </div>
+            </div>
+
+            <!-- Foto 5 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="janela5.jpg" alt="Janela">
+                <div class="grid-item-info">
+                    <h3>Projeto Esquadria 5</h3>
+                    <p>Soluções sob medida para cozinhas e lavanderias.</p>
+                </div>
+            </div>
+
+            <!-- Foto 6 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="300">
+                <img src="janela6.jpg" alt="Janela">
+                <div class="grid-item-info">
+                    <h3>Projeto Esquadria 6</h3>
+                    <p>Portas pivotantes de vidro temperado de alta segurança.</p>
+                </div>
+            </div>
+
+            <!-- Foto 7 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="janela7.jpg" alt="Janela">
+                <div class="grid-item-info">
+                    <h3>Projeto Esquadria 7</h3>
+                    <p>Visual clean integrado com perfis discretos.</p>
+                </div>
+            </div>
+
+            <!-- Foto 8 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="janela8.jpg" alt="Janela">
+                <div class="grid-item-info">
+                    <h3>Projeto Esquadria 8</h3>
+                    <p>Janelas maxim-ar perfeitas para banheiros e lavabos.</p>
+                </div>
+            </div>
+
+            <!-- Foto 9 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="300">
+                <img src="janela9.jpg" alt="Janela">
+                <div class="grid-item-info">
+                    <h3>Projeto Esquadria 9</h3>
+                    <p>Portas integradas com persiana automatizada.</p>
+                </div>
+            </div>
+
+            <!-- Foto 10 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="janela10.jpg" alt="Janela">
+                <div class="grid-item-info">
+                    <h3>Projeto Esquadria 10</h3>
+                    <p>Trabalho estrutural robusto garantindo durabilidade.</p>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -84,5 +156,13 @@
         <p>&copy; 2026 <span class="highlight">Coberka</span>. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- Script de Animação -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
 </html>
