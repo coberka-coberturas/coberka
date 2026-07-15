@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <!-- CSS do Animate on Scroll -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coberka | Coberturas e Soluções em Vidros</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- 1. Adicionado o arquivo CSS do AOS para as animações -->
+    <!-- CSS do Animate on Scroll (AOS) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
@@ -254,6 +252,40 @@
             transform: translateY(-3px);
         }
 
+        /* ----------------------------------------- */
+        /* Estilo do Botão Flutuante do WhatsApp     */
+        /* ----------------------------------------- */
+        .whatsapp-flutuante {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Mantém o ícone do FontAwesome centralizado */
+        .whatsapp-flutuante i {
+            font-size: 32px;
+            color: #fff;
+        }
+
+        /* Efeito de hover */
+        .whatsapp-flutuante:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2rem;
@@ -263,6 +295,15 @@
             }
             .grid {
                 grid-template-columns: 1fr;
+            }
+            .whatsapp-flutuante {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-flutuante i {
+                font-size: 26px;
             }
         }
     </style>
@@ -275,7 +316,7 @@
             <div class="logo">
                 <img src="logo_novo.png" alt="Logo Coberka">
             </div>
-            <a href="https://wa.me/5511958687459?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+cobertura." class="contact-btn" target="_blank">
+            <a href="https://wa.me/5511968280831?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+cobertura." class="contact-btn" target="_blank">
                 <i class="fab fa-whatsapp"></i> Fale Conosco
             </a>
         </div>
@@ -286,7 +327,7 @@
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
             <h1>Coberturas de Vidro & <span>Estruturas Retráteis</span></h1>
             <p>Design moderno, durabilidade extrema e proteção sofisticada para o seu ambiente residencial ou comercial.</p>
-            <a href="https://wa.me/5511958687459?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+cobertura." class="cta-btn" target="_blank">
+            <a href="https://wa.me/5511968280831?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+cobertura." class="cta-btn" target="_blank">
                 <i class="fab fa-whatsapp"></i> Orçamento pelo WhatsApp
             </a>
         </div>
@@ -339,7 +380,7 @@
     <!-- Rodapé -->
     <footer class="footer">
         <div class="social-links" data-aos="zoom-in">
-            <a href="https://wa.me/5511958687459?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+cobertura." class="social-btn" target="_blank" title="WhatsApp">
+            <a href="https://wa.me/5511968280831?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+cobertura." class="social-btn" target="_blank" title="WhatsApp">
                 <i class="fab fa-whatsapp"></i>
             </a>
             <a href="https://www.instagram.com/coberka.coberturas?igsh=dXl5enUza3gxZXg0" class="social-btn" target="_blank" title="Instagram">
@@ -353,21 +394,22 @@
         <p>Guarulhos - SP | Atendimento em toda a Grande São Paulo</p>
     </footer>
 
-    <!-- 2. Adicionado o arquivo JavaScript do AOS e sua inicialização -->
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <a href="https://wa.me/5511968280831?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+cobertura." 
+       class="whatsapp-flutuante" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       title="Fale Conosco pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript do Animate on Scroll (AOS) e sua inicialização -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1000, // Velocidade padrão da animação (1 segundo)
-            once: true      // A animação acontece apenas uma vez ao descer a página
+            duration: 1000, // Velocidade da animação (1 segundo)
+            once: true      // Ativa o movimento apenas uma vez ao rolar
         });
     </script>
-    <!-- JavaScript do Animate on Scroll -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({
-        duration: 1000, // Velocidade da animação (1 segundo)
-        once: true      // Ativa o movimento apenas uma vez ao rolar
-    });
-</script>
 </body>
 </html>
