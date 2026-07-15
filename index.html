@@ -1,32 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coberka | Coberturas e Soluções em Vidros</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 1. Adicionado o arquivo CSS do AOS para as animações -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #111111;
+            --accent: #d4af37;
+            --light: #f9f9f9;
+            --dark: #1a1a1a;
+            --gray: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<!-- 4. Janelas, Box, Envidraçamento, Guarda-corpo -->
-<a href="vidracaria.html" class="grid-item">
-                <img src="input_file_7.jpeg" alt="Vidraçaria e Envidraçamento Coberka">
+        body {
+            background-color: var(--light);
+            color: var(--primary);
+            line-height: 1.6;
+            overflow-x: hidden; /* Evita barras de rolagem indesejadas durante as animações lateralizadas */
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            height: 55px;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .contact-btn {
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-btn:hover {
+            background-color: white;
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('input_file_0.jpeg') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+            margin-top: 85px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .hero-content h1 span {
+            color: var(--accent);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            background-color: var(--accent);
+            color: var(--primary);
+            padding: 15px 35px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(212,175,55,0.3);
+        }
+
+        .cta-btn:hover {
+            background-color: white;
+            transform: translateY(-3px);
+        }
+
+        .gallery {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .grid-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            border: 1px solid #eee;
+            text-decoration: none;
+            display: block;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .grid-item-info {
+            padding: 20px;
+        }
+
+        .grid-item-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .grid-item-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 3px solid var(--accent);
+        }
+
+        .footer p {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: #ccc;
+        }
+
+        .footer .highlight {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-btn {
+            color: white;
+            font-size: 1.5rem;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .social-btn:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho (entra deslizando do topo) -->
+    <header data-aos="fade-down" data-aos-duration="800">
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo_novo.png" alt="Logo Coberka">
+            </div>
+            <a href="https://wa.me/5511958687459?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+cobertura." class="contact-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Fale Conosco
+            </a>
+        </div>
+    </header>
+
+    <!-- Seção Hero (conteúdo surge subindo suavemente) -->
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <h1>Coberturas de Vidro & <span>Estruturas Retráteis</span></h1>
+            <p>Design moderno, durabilidade extrema e proteção sofisticada para o seu ambiente residencial ou comercial.</p>
+            <a href="https://wa.me/5511958687459?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+cobertura." class="cta-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Orçamento pelo WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Galeria de Serviços (animações em cascata nos cards) -->
+    <section class="gallery">
+        <h2 class="section-title" data-aos="fade-up">Nossos Serviços</h2>
+        <div class="grid">
+            
+            <!-- 1. Cobertura de Vidro -->
+            <a href="vidro.html" class="grid-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="vidro1.jpg" alt="Cobertura de Vidro Coberka">
+                <div class="grid-item-info">
+                    <h3>Cobertura de Vidro</h3>
+                    <p>Clique para ver fotos e projetos elegantes feitos em vidro de segurança.</p>
+                </div>
+            </a>
+
+            <!-- 2. Cobertura de Policarbonato Compacto -->
+            <a href="policarbonato_compacto.html" class="grid-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="compacto9.jpg" alt="Cobertura de Policarbonato Compacto">
+                <div class="grid-item-info">
+                    <h3>Policarbonato Compacto</h3>
+                    <p>Veja coberturas leves com transparência idêntica ao vidro e alta resistência mecânica.</p>
+                </div>
+            </a>
+
+            <!-- 3. Cobertura de Policarbonato Alveolar -->
+            <a href="policarbonato_alveolar.html" class="grid-item" data-aos="fade-up" data-aos-delay="300">
+                <img src="input_file_0.jpeg" alt="Cobertura de Policarbonato Alveolar">
+                <div class="grid-item-info">
+                    <h3>Policarbonato Alveolar</h3>
+                    <p>Excelente custo-benefício, conforto térmico e ótima proteção de luz para seu espaço.</p>
+                </div>
+            </a>
+
+            <!-- 4. Janelas, Box, Envidraçamento, Guarda-corpo -->
+            <a href="vidracaria.html" class="grid-item" data-aos="fade-up" data-aos-delay="400">
                 <img src="janela6.jpg" alt="Vidraçaria e Envidraçamento Coberka">
-<div class="grid-item-info">
-<h3>Vidros & Esquadrias</h3>
-<p>Confira nossos projetos de Janelas, Box de Banheiro, Envidraçamento de Sacadas e Guarda-corpo.</p>
-</div>
-</a>
+                <div class="grid-item-info">
+                    <h3>Vidros & Esquadrias</h3>
+                    <p>Confira nossos projetos de Janelas, Box de Banheiro, Envidraçamento de Sacadas e Guarda-corpo.</p>
+                </div>
+            </a>
 
-</div>
-</section>
+        </div>
+    </section>
 
-<footer class="footer">
-<div class="social-links">
-<a href="https://wa.me/5511958687459?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+cobertura." class="social-btn" target="_blank" title="WhatsApp">
-<i class="fab fa-whatsapp"></i>
-</a>
-<a href="https://www.instagram.com/coberka.coberturas?igsh=dXl5enUza3gxZXg0" class="social-btn" target="_blank" title="Instagram">
-<i class="fab fa-instagram"></i>
-</a>
-<a href="https://www.facebook.com/coberka_coberturas" class="social-btn" target="_blank" title="Facebook">
-<i class="fab fa-facebook-f"></i>
-</a>
-</div>
-<p>&copy; 2026 <span class="highlight">Coberka</span>. Todos os direitos reservados.</p>
-<p>Guarulhos - SP | Atendimento em toda a Grande São Paulo</p>
-</footer>
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="social-links" data-aos="zoom-in">
+            <a href="https://wa.me/5511958687459?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+cobertura." class="social-btn" target="_blank" title="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/coberka.coberturas?igsh=dXl5enUza3gxZXg0" class="social-btn" target="_blank" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/coberka_coberturas" class="social-btn" target="_blank" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+        <p>&copy; 2026 <span class="highlight">Coberka</span>. Todos os direitos reservados.</p>
+        <p>Guarulhos - SP | Atendimento em toda a Grande São Paulo</p>
+    </footer>
 
+    <!-- 2. Adicionado o arquivo JavaScript do AOS e sua inicialização -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, // Velocidade padrão da animação (1 segundo)
+            once: true      // A animação acontece apenas uma vez ao descer a página
+        });
+    </script>
 </body>
 </html>
