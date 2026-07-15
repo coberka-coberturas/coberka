@@ -7,32 +7,76 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        :root { --primary: #111111; --accent: #d4af37; --light: #f9f9f9; }
-        body { font-family: 'Segoe UI', sans-serif; background: var(--light); margin: 0; padding-top: 80px; }
-        header { background: var(--primary); padding: 15px 5%; position: fixed; width: 100%; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent); }
-        .content { max-width: 900px; margin: 50px auto; padding: 20px; }
-        h1 { color: var(--primary); margin-bottom: 20px; }
-        .img-destaque { width: 100%; border-radius: 8px; margin-bottom: 20px; }
-        .footer { background: var(--primary); color: white; text-align: center; padding: 40px; margin-top: 50px; }
+        :root {
+            --primary: #111111;
+            --accent: #d4af37;
+            --light: #f9f9f9;
+            --gray: #666666;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--light); color: var(--primary); padding-top: 90px; overflow-x: hidden; }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            border-bottom: 2px solid var(--accent);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .back-btn { color: white; text-decoration: none; font-weight: bold; font-size: 1rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .back-btn:hover { color: var(--accent); }
+        
+        .gallery-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .page-title { text-align: center; margin-bottom: 15px; font-size: 2.2rem; text-transform: uppercase; }
+        .page-subtitle { text-align: center; color: var(--gray); margin-bottom: 40px; }
+        
+        .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .photo-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border: 1px solid #eee; }
+        .photo-card img { width: 100%; height: 280px; object-fit: cover; display: block; transition: 0.5s; }
+        .photo-card:hover img { transform: scale(1.05); }
+
+        .footer { background-color: var(--primary); color: white; text-align: center; padding: 40px 20px; border-top: 3px solid var(--accent); margin-top: 60px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <a href="index.html" style="color: white; text-decoration: none; font-weight: bold;">← Voltar</a>
+    <header data-aos="fade-down">
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar ao Início</a>
+        <div class="logo"><img src="logo_novo.png" alt="Logo" style="height: 45px;" onerror="this.style.display='none'"></div>
     </header>
 
-    <div class="content">
-        <h1 data-aos="fade-up">Policarbonato Compacto</h1>
-        <img src="compacto9.jpg" alt="Policarbonato Compacto" class="img-destaque" data-aos="fade-up" data-aos-delay="200">
-        <p data-aos="fade-up" data-aos-delay="400">Texto explicativo sobre o Policarbonato Compacto. Note que o movimento de entrada suave já está funcionando nesta página.</p>
+    <div class="gallery-container">
+        <h1 class="page-title" data-aos="fade-up">Policarbonato Compacto</h1>
+        <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">Estruturas leves com máxima transparência e resistência mecânica inigualável.</p>
+        
+        <div class="photo-grid">
+            <div class="photo-card" data-aos="fade-up" data-aos-delay="100"><img src="compacto1.jpg" alt="Compacto 1"></div>
+            <div class="photo-card" data-aos="fade-up" data-aos-delay="150"><img src="compacto2.jpg" alt="Compacto 2"></div>
+            <div class="photo-card" data-aos="fade-up" data-aos-delay="200"><img src="compacto3.jpg" alt="Compacto 3"></div>
+            <div class="photo-card" data-aos="fade-up" data-aos-delay="250"><img src="compacto4.jpg" alt="Compacto 4"></div>
+            <div class="photo-card" data-aos="fade-up" data-aos-delay="300"><img src="compacto5.jpg" alt="Compacto 5"></div>
+            <div class="photo-card" data-aos="fade-up" data-aos-delay="350"><img src="compacto6.jpg" alt="Compacto 6"></div>
+            <div class="photo-card" data-aos="fade-up" data-aos-delay="400"><img src="compacto7.jpg" alt="Compacto 7"></div>
+            <div class="photo-card" data-aos="fade-up" data-aos-delay="450"><img src="compacto8.jpg" alt="Compacto 8"></div>
+            <div class="photo-card" data-aos="fade-up" data-aos-delay="500"><img src="compacto9.jpg" alt="Compacto 9"></div>
+            <div class="photo-card" data-aos="fade-up" data-aos-delay="550"><img src="compacto10.jpg" alt="Compacto 10"></div>
+        </div>
     </div>
 
     <footer class="footer">
-        <p>&copy; 2026 Coberka. Todos os direitos reservados.</p>
+        <p>&copy; 2026 <span style="color: var(--accent); font-weight: bold;">Coberka</span>. Todos os direitos reservados.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>
