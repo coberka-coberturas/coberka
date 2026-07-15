@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Box de Banheiro | Coberka</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS de Animação -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root { --primary: #111111; --accent: #d4af37; --light: #f9f9f9; --dark: #1a1a1a; --gray: #666666; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: var(--light); color: var(--primary); line-height: 1.6; }
+        body { background-color: var(--light); color: var(--primary); line-height: 1.6; overflow-x: hidden; }
         header { background-color: var(--primary); color: white; padding: 15px 5%; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); border-bottom: 2px solid var(--accent); }
         .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
         .logo img { height: 55px; border-radius: 4px; }
@@ -37,7 +39,7 @@
 <body>
 
     <header>
-        <div class="header-container">
+        <div class="header-container" data-aos="fade-down">
             <div class="logo"><img src="logo_novo.png" alt="Logo Coberka"></div>
             <div class="header-nav">
                 <a href="vidracaria.html" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar</a>
@@ -49,11 +51,11 @@
     </header>
 
     <div class="content-area">
-        <h2 class="section-title">Box de Banheiro Fino</h2>
+        <h2 class="section-title" data-aos="zoom-in">Box de Banheiro Fino</h2>
         <div class="grid">
             
             <!-- Foto 1 -->
-            <div class="grid-item">
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="100">
                 <img src="box1.jpg" alt="Box de Banheiro">
                 <div class="grid-item-info">
                     <h3>Projeto Box 1</h3>
@@ -61,16 +63,86 @@
                 </div>
             </div>
 
-            <!-- Repetição de fotos até completar 10 -->
-            <div class="grid-item"><img src="box2.jpg" alt="Box"><div class="grid-item-info"><h3>Projeto Box 2</h3><p>Vidro temperado incolor de 8mm com ferragens pretas.</p></div></div>
-            <div class="grid-item"><img src="box3.jpg" alt="Box"><div class="grid-item-info"><h3>Projeto Box 3</h3><p>Box de canto ideal para otimização de espaços compactos.</p></div></div>
-            <div class="grid-item"><img src="box4.jpg" alt="Box"><div class="grid-item-info"><h3>Projeto Box 4</h3><p>Visual clean sem perfis superiores (Box de Engenharia).</p></div></div>
-            <div class="grid-item"><img src="box5.jpg" alt="Box"><div class="grid-item-info"><h3>Projeto Box 5</h3><p>Box articulado (flex) perfeito para vãos pequenos.</p></div></div>
-            <div class="grid-item"><img src="box6.jpg" alt="Box"><div class="grid-item-info"><h3>Projeto Box 6</h3><p>Vidro serigrafado jateado garantindo total privacidade.</p></div></div>
-            <div class="grid-item"><img src="box7.jpg" alt="Box"><div class="grid-item-info"><h3>Projeto Box 7</h3><p>Ferragens em dourado/rose gold para banheiros luxuosos.</p></div></div>
-            <div class="grid-item"><img src="box8.jpg" alt="Box"><div class="grid-item-info"><h3>Projeto Box 8</h3><p>Instalação de teto a piso garantindo retenção total de vapor.</p></div></div>
-            <div class="grid-item"><img src="box9.jpg" alt="Box"><div class="grid-item-info"><h3>Projeto Box 9</h3><p>Vidro bronze moderno com kit de alumínio fosco.</p></div></div>
-            <div class="grid-item"><img src="box10.jpg" alt="Box"><div class="grid-item-info"><h3>Projeto Box 10</h3><p>Qualidade de encaixe e durabilidade contra vazamentos.</p></div></div>
+            <!-- Foto 2 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="box2.jpg" alt="Box">
+                <div class="grid-item-info">
+                    <h3>Projeto Box 2</h3>
+                    <p>Vidro temperado incolor de 8mm com ferragens pretas.</p>
+                </div>
+            </div>
+
+            <!-- Foto 3 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="300">
+                <img src="box3.jpg" alt="Box">
+                <div class="grid-item-info">
+                    <h3>Projeto Box 3</h3>
+                    <p>Box de canto ideal para otimização de espaços compactos.</p>
+                </div>
+            </div>
+
+            <!-- Foto 4 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="box4.jpg" alt="Box">
+                <div class="grid-item-info">
+                    <h3>Projeto Box 4</h3>
+                    <p>Visual clean sem perfis superiores (Box de Engenharia).</p>
+                </div>
+            </div>
+
+            <!-- Foto 5 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="box5.jpg" alt="Box">
+                <div class="grid-item-info">
+                    <h3>Projeto Box 5</h3>
+                    <p>Box articulado (flex) perfeito para vãos pequenos.</p>
+                </div>
+            </div>
+
+            <!-- Foto 6 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="300">
+                <img src="box6.jpg" alt="Box">
+                <div class="grid-item-info">
+                    <h3>Projeto Box 6</h3>
+                    <p>Vidro serigrafado jateado garantindo total privacidade.</p>
+                </div>
+            </div>
+
+            <!-- Foto 7 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="box7.jpg" alt="Box">
+                <div class="grid-item-info">
+                    <h3>Projeto Box 7</h3>
+                    <p>Ferragens em dourado/rose gold para banheiros luxuosos.</p>
+                </div>
+            </div>
+
+            <!-- Foto 8 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="200">
+                <img src="box8.jpg" alt="Box">
+                <div class="grid-item-info">
+                    <h3>Projeto Box 8</h3>
+                    <p>Instalação de teto a piso garantindo retenção total de vapor.</p>
+                </div>
+            </div>
+
+            <!-- Foto 9 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="300">
+                <img src="box9.jpg" alt="Box">
+                <div class="grid-item-info">
+                    <h3>Projeto Box 9</h3>
+                    <p>Vidro bronze moderno com kit de alumínio fosco.</p>
+                </div>
+            </div>
+
+            <!-- Foto 10 -->
+            <div class="grid-item" data-aos="fade-up" data-aos-delay="100">
+                <img src="box10.jpg" alt="Box">
+                <div class="grid-item-info">
+                    <h3>Projeto Box 10</h3>
+                    <p>Qualidade de encaixe e durabilidade contra vazamentos.</p>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -84,5 +156,13 @@
         <p>&copy; 2026 <span class="highlight">Coberka</span>. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- Script de Animação -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
 </html>
