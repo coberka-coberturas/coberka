@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Janelas e Portas | Coberka</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- O visualizador do efeito de movimento (CSS) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root { --primary: #111111; --accent: #d4af37; --light: #f9f9f9; --dark: #1a1a1a; --gray: #666666; }
@@ -12,51 +13,97 @@
         body { background-color: var(--light); color: var(--primary); line-height: 1.6; overflow-x: hidden; }
         header { background-color: var(--primary); color: white; padding: 15px 5%; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); border-bottom: 2px solid var(--accent); }
         .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
-        
-        /* LOGO CLICÁVEL CORRIGIDO */
-        .logo { display: flex; align-items: center; }
-        .logo-link { display: block; line-height: 0; cursor: pointer; position: relative; z-index: 1010; transition: transform 0.2s ease; }
-        .logo-link:hover { transform: scale(1.03); }
-        .logo-link img { height: 55px; border-radius: 4px; display: block; pointer-events: none; }
-        
-        .back-btn { background-color: transparent; color: white; padding: 10px 20px; text-decoration: none; font-weight: bold; border: 1px solid var(--accent); border-radius: 4px; transition: 0.3s; }
+        .logo img { height: 55px; border-radius: 4px; }
+        .back-btn { background-color: transparent; color: white; padding: 10px 20px; text-decoration: none; font-weight: bold; border: 1px solid var(--accent); border-radius: 4px; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
         .back-btn:hover { background-color: var(--accent); color: var(--primary); }
+        
         .content-area { padding: 140px 5% 80px; max-width: 1200px; margin: 0 auto; min-height: 80vh; }
         .section-title { text-align: center; margin-bottom: 20px; font-size: 2.2rem; text-transform: uppercase; }
         .section-title span { color: var(--accent); }
         .section-subtitle { text-align: center; color: var(--gray); margin-bottom: 50px; font-size: 1.1rem; }
-        .gallery-placeholder { text-align: center; padding: 60px 20px; background: white; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px dashed #ddd; }
-        .gallery-placeholder i { font-size: 4rem; color: var(--accent); margin-bottom: 20px; }
+
+        .details-container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eee; margin-bottom: 50px; }
+        .details-container h2 { font-size: 1.8rem; margin-bottom: 20px; border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
+        .details-container p { color: var(--gray); margin-bottom: 20px; }
+        .details-container ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .details-container ul li { display: flex; align-items: center; gap: 10px; font-weight: 500; }
+        .details-container ul li i { color: var(--accent); }
+
+        /* Estilos da Galeria */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin: 40px 0; }
+        .gallery-item { position: relative; overflow: hidden; border-radius: 8px; height: 250px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); cursor: pointer; border: 1px solid #ddd; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .gallery-overlay i { color: white; font-size: 2rem; border: 2px solid white; padding: 10px; border-radius: 50%; }
+
+        /* Botões de Ação */
+        .cta-container { text-align: center; margin-top: 20px; }
+        .cta-btn { background-color: var(--accent); color: var(--primary); padding: 15px 35px; text-decoration: none; font-weight: bold; border-radius: 4px; transition: 0.3s; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 4px 15px rgba(212,175,55,0.3); font-size: 1.1rem; }
+        .cta-btn:hover { background-color: var(--primary); color: white; transform: translateY(-2px); }
+
+        /* WhatsApp Flutuante */
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #fff; border-radius: 50%; text-align: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: background-color 0.3s ease, transform 0.3s ease; }
+        .whatsapp-float i { font-size: 32px; color: #fff; }
+        .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); }
+
         .footer { background-color: var(--primary); color: white; text-align: center; padding: 40px 20px; border-top: 3px solid var(--accent); }
         .footer p { margin-bottom: 15px; font-size: 0.95rem; color: #ccc; }
         .footer .highlight { color: var(--accent); font-weight: bold; }
-        
-        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #fff; border-radius: 50%; text-align: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; }
-        .whatsapp-float i { font-size: 32px; color: #fff; }
-        .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); }
-        @media (max-width: 768px) { .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 20px; } .whatsapp-float i { font-size: 26px; } }
+
+        @media (max-width: 768px) {
+            .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+            .whatsapp-float i { font-size: 26px; }
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+            .gallery-item { height: 150px; }
+        }
     </style>
 </head>
 <body>
+
     <header>
         <div class="header-container" data-aos="fade-down">
-            <div class="logo">
-                <a href="index.html" class="logo-link">
-                    <img src="logo_novo.png" alt="Logo Coberka">
-                </a>
-            </div>
-            <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar</a>
+            <div class="logo"><img src="logo_novo.png" alt="Logo Coberka"></div>
+            <a href="vidracaria.html" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar</a>
         </div>
     </header>
 
     <div class="content-area">
         <h2 class="section-title" data-aos="fade-up">Janelas e <span>Portas</span></h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Esquadrias de alumínio de alto padrão e vidros sob medida para residências e comércios.</p>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Esquadrias de alto padrão e vidros que garantem segurança e isolamento térmico.</p>
         
-        <div class="gallery-placeholder" data-aos="zoom-in" data-aos-delay="200">
-            <i class="fas fa-door-open"></i>
-            <h3>Projetos de Esquadrias e Vidros</h3>
-            <p>Sua galeria de fotos personalizadas será exibida aqui.</p>
+        <div class="details-container" data-aos="fade-up">
+            <h2>Elegância sob Medida</h2>
+            <p>Fabricamos e instalamos janelas e portas de alumínio sob medida para residências e comércios. Trabalhamos com perfis modernos nas cores preta, bronze e branca, além de vidros temperados eficientes.</p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Perfis em alumínio das melhores linhas de mercado</li>
+                <li><i class="fas fa-check-circle"></i> Vidro temperado de 8mm e 10mm</li>
+                <li><i class="fas fa-check-circle"></i> Excelente vedação contra ventos e chuva</li>
+                <li><i class="fas fa-check-circle"></i> Fechaduras, roldanas e acessórios de alta durabilidade</li>
+            </ul>
+        </div>
+
+        <h3 class="section-title" style="font-size: 1.8rem;" data-aos="fade-up">Nossos Projetos</h3>
+
+        <div class="gallery-grid" data-aos="fade-up" data-aos-delay="200">
+            <!-- Substitua janela1.jpg pelas fotos reais do seu servidor -->
+            <div class="gallery-item"><img src="janela1.jpg" alt="Janela 1"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+            <div class="gallery-item"><img src="janela2.jpg" alt="Janela 2"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+            <div class="gallery-item"><img src="janela3.jpg" alt="Janela 3"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+            <div class="gallery-item"><img src="janela4.jpg" alt="Janela 4"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+            <div class="gallery-item"><img src="janela5.jpg" alt="Janela 5"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+            <div class="gallery-item"><img src="janela6.jpg" alt="Janela 6"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+            <div class="gallery-item"><img src="janela7.jpg" alt="Janela 7"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+            <div class="gallery-item"><img src="janela8.jpg" alt="Janela 8"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+            <div class="gallery-item"><img src="janela9.jpg" alt="Janela 9"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+            <div class="gallery-item"><img src="janela10.jpg" alt="Janela 10"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
+        </div>
+
+        <div class="cta-container" data-aos="fade-up">
+            <a href="https://wa.me/5511968280831?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+Janelas+e+Portas." class="cta-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> Solicitar Orçamento no WhatsApp
+            </a>
         </div>
     </div>
 
@@ -65,10 +112,13 @@
         <p>Guarulhos - SP | Atendimento em toda a Grande São Paulo</p>
     </footer>
 
+    <!-- WhatsApp Flutuante -->
     <a href="https://wa.me/5511968280831?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+Janelas+e+Portas." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
+    <script> AOS.init({ duration: 1000, once: true }); </script>
 </body>
 </html>
