@@ -13,7 +13,13 @@
         body { background-color: var(--light); color: var(--primary); line-height: 1.6; overflow-x: hidden; }
         header { background-color: var(--primary); color: white; padding: 15px 5%; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); border-bottom: 2px solid var(--accent); }
         .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
-        .logo img { height: 55px; border-radius: 4px; }
+        
+        /* LOGO CLICÁVEL CORRIGIDO */
+        .logo { display: flex; align-items: center; }
+        .logo-link { display: block; line-height: 0; cursor: pointer; position: relative; z-index: 1010; transition: transform 0.2s ease; }
+        .logo-link:hover { transform: scale(1.03); }
+        .logo-link img { height: 55px; border-radius: 4px; display: block; pointer-events: none; }
+        
         .back-btn { background-color: transparent; color: white; padding: 10px 20px; text-decoration: none; font-weight: bold; border: 1px solid var(--accent); border-radius: 4px; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
         .back-btn:hover { background-color: var(--accent); color: var(--primary); }
         
@@ -64,7 +70,11 @@
 
     <header>
         <div class="header-container" data-aos="fade-down">
-            <div class="logo"><img src="logo_novo.png" alt="Logo Coberka"></div>
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="logo_novo.png" alt="Logo Coberka">
+                </a>
+            </div>
             <a href="vidracaria.html" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar</a>
         </div>
     </header>
@@ -87,7 +97,6 @@
         <h3 class="section-title" style="font-size: 1.8rem;" data-aos="fade-up">Nossos Projetos</h3>
 
         <div class="gallery-grid" data-aos="fade-up" data-aos-delay="200">
-            <!-- Substitua janela1.jpg pelas fotos reais do seu servidor -->
             <div class="gallery-item"><img src="janela1.jpg" alt="Janela 1"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
             <div class="gallery-item"><img src="janela2.jpg" alt="Janela 2"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
             <div class="gallery-item"><img src="janela3.jpg" alt="Janela 3"><div class="gallery-overlay"><i class="fas fa-search-plus"></i></div></div>
