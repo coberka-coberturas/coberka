@@ -5,20 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serviços de Vidraçaria | Coberka</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- 1. O visualizador do efeito de movimento (CSS) -->
+    <!-- O visualizador do efeito de movimento (CSS) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root { --primary: #111111; --accent: #d4af37; --light: #f9f9f9; --dark: #1a1a1a; --gray: #666666; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: var(--light); color: var(--primary); line-height: 1.6; overflow-x: hidden; }
-        header { background-color: var(--primary); color: white; padding: 15px 5%; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3); border-bottom: 2px solid var(--accent); }
+        
+        header { 
+            background-color: var(--primary); 
+            color: white; 
+            padding: 15px 5%; 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
+            border-bottom: 2px solid var(--accent); 
+        }
         .header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
-        .logo img { height: 55px; border-radius: 4px; }
+        
+        /* CORREÇÃO DO LOGO CLICÁVEL: Força o link a ficar na camada superior */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo-link {
+            display: block;
+            line-height: 0; /* Remove espaçamentos indesejados abaixo da imagem */
+            cursor: pointer;
+            position: relative;
+            z-index: 1010; /* Garante que fique acima de qualquer sobreposição */
+            transition: transform 0.2s ease;
+        }
+        .logo-link:hover {
+            transform: scale(1.03); /* Efeito sutil ao passar o mouse */
+        }
+        .logo-link img {
+            height: 55px;
+            border-radius: 4px;
+            display: block;
+            pointer-events: none; /* Faz o clique passar direto para o link <a> */
+        }
+        
         .back-btn { background-color: transparent; color: white; padding: 10px 20px; text-decoration: none; font-weight: bold; border: 1px solid var(--accent); border-radius: 4px; transition: 0.3s; }
         .back-btn:hover { background-color: var(--accent); color: var(--primary); }
         
         .content-area { padding: 140px 5% 80px; max-width: 1200px; margin: 0 auto; min-height: 80vh; }
         .section-title { text-align: center; margin-bottom: 20px; font-size: 2.2rem; text-transform: uppercase; }
+        .section-title span { color: var(--accent); }
         .section-subtitle { text-align: center; color: var(--gray); margin-bottom: 50px; font-size: 1.1rem; }
         
         .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
@@ -33,19 +68,64 @@
         .footer { background-color: var(--primary); color: white; text-align: center; padding: 40px 20px; border-top: 3px solid var(--accent); }
         .footer p { margin-bottom: 15px; font-size: 0.95rem; color: #ccc; }
         .footer .highlight { color: var(--accent); font-weight: bold; }
+
+        /* Botão Flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .whatsapp-float i {
+            font-size: 32px;
+            color: #fff;
+        }
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float i {
+                font-size: 26px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="header-container" data-aos="fade-down">
-            <div class="logo"><img src="logo_novo.png" alt="Logo Coberka"></div>
+            <!-- Estrutura corrigida do Logo com a classe .logo-link -->
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="logo_novo.png" alt="Logo Coberka">
+                </a>
+            </div>
             <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar ao Início</a>
         </div>
     </header>
 
     <div class="content-area">
-        <h2 class="section-title" data-aos="fade-up">Nossos Serviços de Vidraçaria</h2>
+        <h2 class="section-title" data-aos="fade-up">Nossos Serviços de <span>Vidraçaria</span></h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Selecione uma categoria abaixo para visualizar nossa galeria de projetos realizados.</p>
         
         <div class="menu-grid">
@@ -78,7 +158,7 @@
             <a href="box.html" class="menu-card" data-aos="fade-up" data-aos-delay="500">
                 <i class="fas fa-shower"></i>
                 <h3>Box de Banheiro</h3>
-                <p>Modelos padrão e engenharia com roldanas aparentes e inox.</p>
+                <p>Modelos padrão e engenharia com roldanas apresentes e inox.</p>
                 <span class="btn-ver">Ver Fotos</span>
             </a>
 
@@ -90,7 +170,16 @@
         <p>Guarulhos - SP | Atendimento em toda a Grande São Paulo</p>
     </footer>
 
-    <!-- 2. O motor do movimento (Scripts) -->
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5511968280831?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+Vidros+e+Esquadrias." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       title="Fale conosco pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- O motor do movimento (Scripts) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
