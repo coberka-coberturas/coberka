@@ -52,16 +52,31 @@
             margin: 0 auto;
         }
 
+        /* LOGO CLICÁVEL CORRIGIDO */
         .logo {
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .logo img {
+        .logo-link {
+            display: block;
+            line-height: 0;
+            cursor: pointer;
+            position: relative;
+            z-index: 1010;
+            transition: transform 0.2s ease;
+        }
+
+        .logo-link:hover {
+            transform: scale(1.03);
+        }
+
+        .logo-link img {
             height: 55px;
             border-radius: 4px;
             display: block;
+            pointer-events: none; /* Garante que o clique passe diretamente para o link */
         }
 
         .back-btn {
@@ -365,7 +380,9 @@
     <header data-aos="fade-down" data-aos-duration="800">
         <div class="header-container">
             <div class="logo">
-                <img src="logo_novo.png" alt="Logo Coberka">
+                <a href="index.html" class="logo-link">
+                    <img src="logo_novo.png" alt="Logo Coberka">
+                </a>
             </div>
             <a href="index.html" class="back-btn">
                 <i class="fas fa-arrow-left"></i> Voltar ao Início
