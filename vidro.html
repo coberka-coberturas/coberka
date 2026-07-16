@@ -115,13 +115,14 @@
 
         .details-container {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-columns: 1fr;
             gap: 40px;
             background: white;
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             border: 1px solid #eee;
+            margin-bottom: 50px;
         }
 
         .details-info h2 {
@@ -141,10 +142,12 @@
         .details-info ul {
             list-style: none;
             margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
         }
 
         .details-info ul li {
-            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -155,10 +158,15 @@
             color: var(--accent);
         }
 
+        .cta-container-center {
+            text-align: center;
+            margin-top: 20px;
+        }
+
         .cta-inline {
             background-color: var(--accent);
             color: var(--primary);
-            padding: 12px 25px;
+            padding: 15px 35px;
             text-decoration: none;
             font-weight: bold;
             border-radius: 4px;
@@ -166,7 +174,8 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 4px 15px rgba(212,175,55,0.2);
+            box-shadow: 0 4px 15px rgba(212,175,55,0.3);
+            font-size: 1.1rem;
         }
 
         .cta-inline:hover {
@@ -175,12 +184,79 @@
             transform: translateY(-2px);
         }
 
-        .details-image img {
+        /* --- ESTILOS DA GALERIA --- */
+        .gallery-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            position: relative;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .gallery-title span {
+            color: var(--accent);
+        }
+
+        .gallery-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 250px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            border: 1px solid #ddd;
+        }
+
+        .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 6px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover final .gallery-overlay,
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: white;
+            font-size: 2rem;
+            border: 2px solid white;
+            padding: 10px;
+            border-radius: 50%;
         }
 
         .footer {
@@ -264,7 +340,6 @@
                 font-size: 1.8rem;
             }
             .details-container {
-                grid-template-columns: 1fr;
                 padding: 20px;
             }
             .whatsapp-flutuante {
@@ -275,6 +350,13 @@
             }
             .whatsapp-flutuante i {
                 font-size: 26px;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 10px;
+            }
+            .gallery-item {
+                height: 150px;
             }
         }
     </style>
@@ -308,17 +390,73 @@
                 <ul>
                     <li><i class="fas fa-check-circle"></i> Vidros laminados e temperados de segurança</li>
                     <li><i class="fas fa-check-circle"></i> Estruturas metálicas de alta durabilidade</li>
-                    <li><i class="fas fa-check-circle"></i> Máxima transparência e sofisticação arquitetônica</li>
-                    <li><i class="fas fa-check-circle"></i> Vedação siliconada de alta vedação contra vazamentos</li>
+                    <li><i class="fas fa-check-circle"></i> Máxima transparência e sofisticação</li>
+                    <li><i class="fas fa-check-circle"></i> Vedação siliconada contra vazamentos</li>
                 </ul>
+            </div>
+        </div>
 
-                <a href="https://wa.me/5511968280831?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+Cobertura+de+Vidro." class="cta-inline" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Solicitar Orçamento
-                </a>
+        <!-- SEÇÃO DE GALERIA - 10 FOTOS -->
+        <h2 class="gallery-title" data-aos="fade-up">Galeria de <span>Projetos</span></h2>
+        <p class="gallery-subtitle" data-aos="fade-up">Confira fotos reais de algumas das nossas instalações de coberturas de vidro.</p>
+        
+        <div class="gallery-grid" data-aos="fade-up" data-aos-delay="200">
+            <!-- Foto 1 -->
+            <div class="gallery-item">
+                <img src="vidro1.jpg" alt="Cobertura de Vidro 1">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
             </div>
-            <div class="details-image">
-                <img src="vidro1.jpg" alt="Cobertura de Vidro">
+            <!-- Foto 2 -->
+            <div class="gallery-item">
+                <img src="vidro2.jpg" alt="Cobertura de Vidro 2">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
             </div>
+            <!-- Foto 3 -->
+            <div class="gallery-item">
+                <img src="vidro3.jpg" alt="Cobertura de Vidro 3">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <!-- Foto 4 -->
+            <div class="gallery-item">
+                <img src="vidro4.jpg" alt="Cobertura de Vidro 4">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <!-- Foto 5 -->
+            <div class="gallery-item">
+                <img src="vidro5.jpg" alt="Cobertura de Vidro 5">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <!-- Foto 6 -->
+            <div class="gallery-item">
+                <img src="vidro6.jpg" alt="Cobertura de Vidro 6">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <!-- Foto 7 -->
+            <div class="gallery-item">
+                <img src="vidro7.jpg" alt="Cobertura de Vidro 7">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <!-- Foto 8 -->
+            <div class="gallery-item">
+                <img src="vidro8.jpg" alt="Cobertura de Vidro 8">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <!-- Foto 9 -->
+            <div class="gallery-item">
+                <img src="vidro9.jpg" alt="Cobertura de Vidro 9">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <!-- Foto 10 -->
+            <div class="gallery-item">
+                <img src="vidro10.jpg" alt="Cobertura de Vidro 10">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+        </div>
+
+        <div class="cta-container-center" data-aos="fade-up">
+            <a href="https://wa.me/5511968280831?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+Cobertura+de+Vidro." class="cta-inline" target="_blank">
+                <i class="fab fa-whatsapp"></i> Solicitar Orçamento via WhatsApp
+            </a>
         </div>
     </main>
 
