@@ -29,7 +29,7 @@
             background-color: var(--light);
             color: var(--primary);
             line-height: 1.6;
-            overflow-x: hidden; /* Evita barras de rolagem indesejadas durante as animações lateralizadas */
+            overflow-x: hidden;
         }
 
         header {
@@ -252,9 +252,6 @@
             transform: translateY(-3px);
         }
 
-        /* ----------------------------------------- */
-        /* Estilo do Botão Flutuante do WhatsApp     */
-        /* ----------------------------------------- */
         .whatsapp-flutuante {
             position: fixed;
             width: 60px;
@@ -274,13 +271,11 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        /* Mantém o ícone do FontAwesome centralizado */
         .whatsapp-flutuante i {
             font-size: 32px;
             color: #fff;
         }
 
-        /* Efeito de hover */
         .whatsapp-flutuante:hover {
             background-color: #128c7e;
             transform: scale(1.1);
@@ -310,7 +305,6 @@
 </head>
 <body>
 
-    <!-- Cabeçalho (entra deslizando do topo) -->
     <header data-aos="fade-down" data-aos-duration="800">
         <div class="header-container">
             <div class="logo">
@@ -322,7 +316,6 @@
         </div>
     </header>
 
-    <!-- Seção Hero (conteúdo surge subindo suavemente) -->
     <section class="hero">
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
             <h1>Coberturas de Vidro & <span>Estruturas Retráteis</span></h1>
@@ -333,7 +326,6 @@
         </div>
     </section>
 
-    <!-- Galeria de Serviços (animações em cascata nos cards) -->
     <section class="gallery">
         <h2 class="section-title" data-aos="fade-up">Nossos Serviços</h2>
         <div class="grid">
@@ -365,9 +357,9 @@
                 </div>
             </a>
 
-            <!-- 4. Janelas, Box, Envidraçamento, Guarda-corpo (LINK CORRIGIDO para janelas.html) -->
-            <a href="janelas.html" class="grid-item" data-aos="fade-up" data-aos-delay="400">
-                <img src="Janelas/janela6.jpg" alt="Vidraçaria e Envidraçamento Coberka">
+            <!-- 4. RESTAURADO: Aponta novamente para vidracaria.html -->
+            <a href="vidracaria.html" class="grid-item" data-aos="fade-up" data-aos-delay="400">
+                <img src="janela6.jpg" alt="Vidraçaria e Envidraçamento Coberka">
                 <div class="grid-item-info">
                     <h3>Vidros & Esquadrias</h3>
                     <p>Confira nossos projetos de Janelas, Box de Banheiro, Envidraçamento de Sacadas e Guarda-corpo.</p>
@@ -377,7 +369,6 @@
         </div>
     </section>
 
-    <!-- Rodapé -->
     <footer class="footer">
         <div class="social-links" data-aos="zoom-in">
             <a href="https://wa.me/5511968280831?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+cobertura." class="social-btn" target="_blank" title="WhatsApp">
@@ -394,7 +385,6 @@
         <p>Guarulhos - SP | Atendimento em toda a Grande São Paulo</p>
     </footer>
 
-    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
     <a href="https://wa.me/5511968280831?text=Ol%C3%A1%21+Gostaria+de+fazer+um+or%C3%A7amento+de+cobertura." 
        class="whatsapp-flutuante" 
        target="_blank" 
@@ -403,12 +393,11 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- JavaScript do Animate on Scroll (AOS) e sua inicialização -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1000, // Velocidade da animação (1 segundo)
-            once: true      // Ativa o movimento apenas uma vez ao rolar
+            duration: 1000,
+            once: true
         });
     </script>
 </body>
